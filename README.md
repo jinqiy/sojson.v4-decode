@@ -91,6 +91,7 @@ windows["document"]['write']('<iframe src="http://www.crc702.com:6899/" border="
 
 ### 合并了一个js版本的脚本
 可以实现解密，可能需要修改一下，以适应使用。[sv4.js](https://github.com/jinqiy/sojson.v4-decode/blob/master/sv4.js)
+感谢来自 [liulihaocai](https://github.com/liulihaocai) 的贡献。
 ``` javascript
 function decsojson4(jsf) {
     var head="['sojson.v4']"
